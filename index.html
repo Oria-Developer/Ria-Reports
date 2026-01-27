@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ria Reports</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #b8aaaa 0%, rgba(250, 59, 59, 0) 124, 124, 0.863) 100%);
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            position: relative;
+        }
+
+        .header-card h1 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 2.5rem;
+        }
+
+        .header-card p {
+            color: #666;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .discord-card {
+            position: relative;
+        }
+
+        button {
+            background: linear-gradient(135deg, #000000 0%, #000000 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        .arrow-path {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            z-index: 10;
+        }
+
+        .arrow-path::before {
+            content: '←';
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 2.5rem;
+            color: #666;
+            margin: 25px 0;
+            animation: moveLeft 1.5s ease-in-out infinite;
+        }
+
+        .arrow-path::after {
+            content: '↓';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            font-size: 2rem;
+            color: #666;
+            animation: moveDown 1.5s ease-in-out infinite;
+        }
+
+        @keyframes moveLeft {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(-10px); }
+        }
+
+        @keyframes moveDown {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+
+        .arrow {
+            margin: 40px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .separator {
+            width: 1px;
+            height: 30px;
+            background: rgba(102, 102, 102, 0.3);
+        }
+
+        .website-card {
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 30px 20px;
+            }
+            
+            .header-card h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="card header-card">
+            <h1>Ria Reports</h1>
+            <p>All bug report submissions are here</p>
+        </div>
+        
+        <div class="card sites-card">
+            <button onclick="window.location.href = 'discord-bot-generator.html';">Discord Bot Generator</button>
+            <div class="arrow">
+                <div class="separator"></div>
+            </div> 
+            <button onclick="window.location.href = 'index.html';">Main Website</button>
+        </div>
+    </div>
+</body>
+</html>
